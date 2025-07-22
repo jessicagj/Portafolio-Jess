@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="https://jessicagonzalezj.com/img/perfil.jpg">
 
   <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/menu.css" />
 
   <link rel="icon" href="img/favicon.png" />
 <!-- MDB CSS -->
@@ -415,15 +415,10 @@
   </div>
 </section>
 
-
-  <footer data-aos="fade-up">
-    <p>&copy; 2025 Jessi | Portafolio</p>
-  </footer>
-
   </main>
 
   <footer>
-    <p>&copy; 2025 Jessi. Todos los derechos reservados.</p>
+    <p>Jessica Gonzalez  &copy; 2025  Todos los derechos reservados.</p>
   </footer>
 <!-- MDB JS -->
 <script
@@ -432,7 +427,7 @@
 ></script>
 <!-- AOS JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 <script>
   AOS.init({
@@ -441,26 +436,7 @@
   });
 </script>
 <script>
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('main-header');
-    const logo = document.getElementById('main-logo');
-    if (window.scrollY > 100) {
-      header.classList.add('header-scrolled');
-      logo.src = 'img/logo-mini.png'; // Logo pequeño
-    } else {
-      header.classList.remove('header-scrolled');
-      logo.src = 'img/logo-grande.png'; // Logo grande
-    }
 
-    // Mostrar gatitos al hacer scroll
-    const gatitos = document.querySelectorAll('.gato');
-    gatitos.forEach((gato) => {
-      const rect = gato.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        gato.classList.add('visible');
-      }
-    });
-  });
 </script>
 
 
