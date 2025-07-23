@@ -467,3 +467,35 @@ footer {
 .formulario-contacto button:hover {
   background-color: #6d3ddb;
 }
+
+
+.section {
+  height: 100vh;
+  padding: 2rem;
+  background-color: #f4f4f8;
+  border-bottom: 1px solid #ccc;
+}
+
+.image-box {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%) translateX(100%);
+  opacity: 0;
+  filter: blur(10px);
+  transition: transform 0.8s ease, opacity 0.8s ease, filter 0.8s ease;
+  width: 250px;
+  z-index: 999;
+}
+
+.image-box.visible {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+  filter: blur(0);
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}

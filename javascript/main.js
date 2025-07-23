@@ -24,44 +24,33 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 1000,
     once: true,
   });
+  
+  // animacion de scroll
+  
+const sections = document.querySelectorAll('.section');
+const images = [
+  document.getElementById('img1'),
+  document.getElementById('img2'),
+  document.getElementById('img3'),
+  document.getElementById('img4'),
+  document.getElementById('img5')
+];
 
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('main-header');
-    const logo = document.getElementById('main-logo');
-    if (window.scrollY > 100) {
-      header.classList.add('header-scrolled');
-      logo.src = 'img/logo-mini.png'; // Logo pequeño
-    } else {
-      header.classList.remove('header-scrolled');
-      logo.src = 'img/logo-grande.png'; // Logo grande
+function handleScroll() {
+  sections.forEach((section, index) => {
+    const rect = section.getBoundingClientRect();
+    const isVisible = rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+
+    if (isVisible) {
+      images.forEach((img, i) => {
+        if (i === index) {
+          img.classList.add('visible');
+        } else {
+          img.classList.remove('visible');
+        }
+      });
     }
-
-    // Mostrar gatitos al hacer scroll
-    const gatitos = document.querySelectorAll('.gato');
-    gatitos.forEach((gato) => {
-      const rect = gato.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        gato.classList.add('visible');
-      }
-    });
   });
-    window.addEventListener('scroll', () => {
-    const header = document.getElementById('main-header');
-    const logo = document.getElementById('main-logo');
-    if (window.scrollY > 100) {
-      header.classList.add('header-scrolled');
-      logo.src = 'img/logo-mini.png'; // Logo pequeño
-    } else {
-      header.classList.remove('header-scrolled');
-      logo.src = 'img/logo-grande.png'; // Logo grande
-    }
+}
 
-    // Mostrar gatitos al hacer scroll
-    const gatitos = document.querySelectorAll('.gato');
-    gatitos.forEach((gato) => {
-      const rect = gato.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        gato.classList.add('visible');
-      }
-    });
-  });
+window.addEventListener('scroll', handleScroll);
